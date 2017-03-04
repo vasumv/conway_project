@@ -64,14 +64,12 @@ class board:
         offset = [-1, 0, 1]
         for i in offset:
             for g in offset:
-                tempX = x + i
-                tempY = y + g
-                if (tempX != x or tempY != y) and tempX >= 0 and tempX < map_size and tempY >= 0 and tempY < map_size and self.map[tempY][tempX].alive:
-                    print("reached")
+                tX = x + i
+                tY = y + g
+                if (tX != x or tY != y) and tX >= 0 and tX < map_size and tY >= 0 and tY < map_size and self.map[tY][tX].alive:
                     cellsNearby += 1
         if cell.alive:
             if cellsNearby < 2 or cellsNearby > 3:
-                print("(",x,",",y,") ",cellsNearby)
                 cell.to_be = False
         else:
             if cellsNearby == 3:
