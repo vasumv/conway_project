@@ -6,7 +6,7 @@ pygame.init()
 
 speed = 10 # how many iterations per second
 squares = 1 # size of squares: 0 = 8X8, 1 = 16X16, 2 = 32X32, 3 = 64X64
-map_size = 32 # the width and height
+map_size = int(float(input("Map size:"))) # the width and height
 
 if squares == 0:
     imgs = ["res/alive_8.png","res/dead_8.png",8]
