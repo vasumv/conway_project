@@ -5,7 +5,7 @@ from pygame.locals import *
 pygame.init()
 
 speed = 10 # how many iterations per second
-squares = 0 # size of squares: 0 = 8X8, 1 = 16X16, 2 = 32X32, 3 = 64X64
+squares = 1 # size of squares: 0 = 8X8, 1 = 16X16, 2 = 32X32, 3 = 64X64
 map_size = int(float(input("Map size:"))) # the width and height
 
 if squares == 0:
@@ -39,7 +39,7 @@ class cell:
 class board:
 
     def __init__(self):
-            self.map = []
+        self.map = []
 
     def fill(self,ran):
         for i in range(map_size):
@@ -111,8 +111,7 @@ def cell_list():
     lst = []
     for i in range(map_size):
         lst.append([])
-        for g in range(map_size):
-            lst[i].append((board.map[i][g].location[0]*imgs[2],board.map[i][g].location[1]*imgs[2]))
+        for g in range(map_size): lst[i].append((board.map[i][g].location[0]*imgs[2],board.map[i][g].location[1]*imgs[2]))
     return lst
 
 board = board()
@@ -122,7 +121,7 @@ tp = 0
 run = False
 
 while done == False:
-    milliseconds = clock.tick(30)
+    milliseconds = clock.tick(60)
     seconds = milliseconds / 1000.0
     tp += milliseconds
 
